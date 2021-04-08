@@ -1,0 +1,54 @@
+buildscript {
+
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        jcenter()
+    }
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'javafx-gradle-plugin'
+
+repositories {
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    jcenter()
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+dependencies{
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile ('org.springframework.boot:spring-boot-starter:2.4.0')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.0'
+    compile ('org.springframework.boot:spring-boot-starter-json:2.4.0')
+
+    // https://mvnrepository.com/artifact/com.jfoenix/jfoenix
+    compile group: 'com.jfoenix', name: 'jfoenix', version: '8.0.9'
+
+
+}
+
+jar {
+    configurations.runtime.each { println it.path }
+    println "========="
+    configurations.compile.each {
+        println it.path
+    }
+    println "========="
+}
+
+jfx {
+    mainClass = 'com.example.demo.DemoApplication'
+    appName = "demo-app"
+    addPackagerJar = true
+    jfxMainAppJarName = "demo-app.jar"
+    libFolderName = "libs"
+    // 公司名称
+    vendor = 'jonesun'
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="com.example.demo.controller.MainController"
+            stylesheets="/css/main.css"
+            fx:id="rootPane"
+            prefWidth="800" prefHeight="700">
+
+    <HBox AnchorPane.topAnchor="200" prefWidth="800" alignment="CENTER" spacing="10">
+        <Label id="custom-label" text="JavaFx样例" style="-fx-font-size: 26"/>
+        <Label id="custom-label" text="V0.0.1-SNAPSHOT" style="-fx-font-size: 26"/>
+    </HBox>
+
+
+    <HBox AnchorPane.topAnchor="300" prefWidth="800" alignment="CENTER">
+        <JFXButton text="新建" prefWidth="140" prefHeight="40" onAction="#doOnCreate"/>
+        <JFXButton text="打开" prefWidth="140" prefHeight="40" onAction="#doOnOpen"/>
+    </HBox>
+
+
+</AnchorPane>

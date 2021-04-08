@@ -1,0 +1,19 @@
+.root{
+    -fx-font-size: 12pt;
+}
+
+.root > * {
+    -primary-color: #2c3649;
+    -primary-variant-color: #293244;
+
+}
+
+.button {
+    -fx-text-fill: #5264AE;
+    -fx-cursor: hand;
+}
+
+#custom-label {
+    -fx-text-fill: #5264AE;
+    -fx-fill: #5264AE;
+}
